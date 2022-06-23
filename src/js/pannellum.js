@@ -1855,15 +1855,16 @@ function createHotSpot(hs) {
     hs.yaw = Number(hs.yaw) || 0;
 
     var div = document.createElement('div');
-    div.className = 'pnlm-hotspot-base';
-    if (hs.cssClass)
-        div.className += ' ' + hs.cssClass;
-    else
-        div.className += ' pnlm-hotspot pnlm-sprite pnlm-' + escapeHTML(hs.type);
+    var image = document.createElement('img');
 
-    var span = document.createElement('span');
-    if (hs.text)
-        span.innerHTML = escapeHTML(hs.text);
+    image.src = hs.cssClass.imgOff;
+    image.width = hs.cssClass.width * 10;
+    image.height = hs.cssClass.height * 10;
+    image.onmouseleave = () => {image.src = hs.cssClass.imgOff};
+    image.onmouseover = () => {image.src = hs.cssClass.imgOn};
+
+    div.appendChild(image);
+    div.className = 'pnlm-hotspot-base';
 
     var a;
     if (hs.video) {
