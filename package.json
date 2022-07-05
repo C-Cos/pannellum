@@ -19,5 +19,8 @@
   "keywords": [
     "panorama",
     "viewer"
-  ]
+  ],
+  "dependencies": {
+    "yarn-list-link": "^1.0.34"
+  }
 }

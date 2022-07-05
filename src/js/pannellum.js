@@ -1856,12 +1856,13 @@ function createHotSpot(hs) {
 
     var div = document.createElement('div');
     var image = document.createElement('img');
+    var span = document.createElement('span');
 
     image.src = hs.cssClass.imgOff;
-    image.width = hs.cssClass.width * 10;
-    image.height = hs.cssClass.height * 10;
-    image.onmouseleave = () => {image.src = hs.cssClass.imgOff};
-    image.onmouseover = () => {image.src = hs.cssClass.imgOn};
+    image.width = 200//hs.cssClass.width;
+    image.height = 500//hs.cssClass.height;
+    image.onmouseleave = function(){image.src = hs.cssClass.imgOff};
+    image.onmouseover = function(){image.src = hs.cssClass.imgOn};
 
     div.appendChild(image);
     div.className = 'pnlm-hotspot-base';
